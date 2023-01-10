@@ -20,7 +20,7 @@ struct SizeView: View {
                      comment: "Label for image width picker")
                 Picker("", selection: $store.width) {
                     ForEach(imageSizes, id: \.self) { s in
-                        Text(String(s)).tag(s)
+                        Text(String(describing: s)).tag(s)
                     }
                 }
                 .labelsHidden()
@@ -30,7 +30,7 @@ struct SizeView: View {
                      comment: "Label for image height picker")
                 Picker("", selection: $store.height) {
                     ForEach(imageSizes, id: \.self) { s in
-                        Text(String(s)).tag(s)
+                        Text(String(describing: s)).tag(s)
                     }
                 }
                 .labelsHidden()

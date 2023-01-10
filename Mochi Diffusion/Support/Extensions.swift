@@ -36,7 +36,7 @@ extension NSImage: Transferable {
         if let cachedURL = NSImage.urlCache[self.hash] {
             return cachedURL
         }
-        let name = String(self.hash)
+        let name = String(describing: self.hash)
         let url = FileManager.default.temporaryDirectory.appendingPathComponent(name, conformingTo: .png)
         let fileWrapper = FileWrapper(regularFileWithContents: self.toPngData())
         try fileWrapper.write(to: url, originalContentsURL: nil)

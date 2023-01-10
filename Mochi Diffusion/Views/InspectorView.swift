@@ -14,7 +14,7 @@ struct InspectorView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
             if let sdi = store.getSelectedImage(), let img = sdi.image {
-                Image(img, scale: 1, label: Text(verbatim: String(sdi.prompt)))
+                Image(img, scale: 1, label: Text(verbatim: String(describing: sdi.prompt)))
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(4)
@@ -55,22 +55,22 @@ struct InspectorView: View {
                             callback: store.copySchedulerToPrompt)
                         InfoGridRow(
                             type: "Seed",
-                            text: String(sdi.seed),
+                            text: String(describing: sdi.seed),
                             showCopyToPromptOption: true,
                             callback: store.copySeedToPrompt)
                         InfoGridRow(
                             type: "Steps",
-                            text: String(sdi.steps),
+                            text: String(describing: sdi.steps),
                             showCopyToPromptOption: true,
                             callback: store.copyStepsToPrompt)
                         InfoGridRow(
                             type: "Guidance Scale",
-                            text: String(sdi.guidanceScale),
+                            text: String(describing: sdi.guidanceScale),
                             showCopyToPromptOption: true,
                             callback: store.copyGuidanceScaleToPrompt)
                         InfoGridRow(
                             type: "Image Index",
-                            text: String(sdi.imageIndex),
+                            text: String(describing: sdi.imageIndex),
                             showCopyToPromptOption: false)
                     }
                 }
